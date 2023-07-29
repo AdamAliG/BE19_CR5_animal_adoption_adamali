@@ -1,3 +1,13 @@
+<?php
+require_once "db_connect.php";
+include "file_upload.php";
+$id = $_GET["animal_id"];
+
+$sql = "SELECT *FROM animal WHERE animal_id = $id";
+$result = mysqli_query($connect, $sql);
+$row = mysqli_fetch_assoc($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +19,12 @@
 <body style="background-color: #56A3A6;">
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    
+  <a class="navbar-brand" href="#">
+ <?php $results = mysqli_query($connect, "SELECT * FROM user");
+$rows = mysqli_fetch_assoc($results);?>
+      <img src="images/<?= $rows["picture"]?>" alt="" width="50" height="50" class="border border-4 border-success-subtle rounded">
+      <a class="text-success fw-bold fs-5" style="text-decoration: none;"><?= $rows["email"] ?></a>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,13 +47,6 @@
 </nav>
 
 <?php
-require_once "db_connect.php";
-
-$id = $_GET["animal_id"];
-
-$sql = "SELECT *FROM animal WHERE animal_id = $id";
-$result = mysqli_query($connect, $sql);
-$row = mysqli_fetch_assoc($result);
 
 echo "
 <div class='container'>
