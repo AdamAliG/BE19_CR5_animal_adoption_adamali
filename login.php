@@ -66,7 +66,7 @@ if(isset($_POST["login"])){
         <input type="password" class="form-control" id="password" name="password" placeholder="password" value="<?= $password ?>">
         <span class="text-danger"><?= $passError ?></span>
       </div>
-      <button name="login" type="submit" class="btn bt-primary">Login</button>
+      <button name="login" type="submit" class="btn btn-primary">Login</button>
 
       <span>you dont have an account?<a href="register.php">register here</a></span>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
