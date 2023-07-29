@@ -82,7 +82,11 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
+<?php
+$result = mysqli_query($connect, "SELECT * FROM animal");
+$row = mysqli_fetch_assoc($result);
 
+?>
 
     
 <div class="container my-5 border border-5 rounded-5 border-warning-subtle" style="background-color: #56A3A6;">
